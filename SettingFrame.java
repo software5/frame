@@ -18,9 +18,10 @@ public class SettingFrame extends JFrame {
 	private JRadioButton jrbSimple, jrbMedium, jrbHard;
 	private JButton ok = new JButton("È·¶¨");
 
+	int a, b, c = 0;
+
 	public SettingFrame() {
 		setLayout(new BorderLayout());
-		System.out.println();
 
 		JPanel rbuttons = new JPanel();
 		rbuttons.setLayout(new GridLayout(1, 3));
@@ -38,7 +39,7 @@ public class SettingFrame extends JFrame {
 		add(rbuttons, BorderLayout.CENTER);
 		add(ok, BorderLayout.SOUTH);
 
-		setSize(200, 100);
+		setSize(200, 150);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setAlwaysOnTop(true);
@@ -48,6 +49,25 @@ public class SettingFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+			}
+		});
+
+		jrbSimple.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				a = 1;
+			}
+		});
+		jrbMedium.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				b = 1;
+			}
+		});
+		jrbHard.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				c = 1;
 			}
 		});
 	}
@@ -74,6 +94,27 @@ public class SettingFrame extends JFrame {
 
 	public void setJrbHard(JRadioButton jrbHard) {
 		this.jrbHard = jrbHard;
+	}
+
+	public boolean jrbSimpleIsSelected() {
+		if (a == 1)
+			return true;
+		else
+			return false;
+	}
+
+	public boolean jrbMediumIsSelected() {
+		if (b == 1)
+			return true;
+		else
+			return false;
+	}
+
+	public boolean jrbHardIsSelected() {
+		if (c == 1)
+			return true;
+		else
+			return false;
 	}
 
 }

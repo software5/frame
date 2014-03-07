@@ -1,6 +1,5 @@
 package frame;
 
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,7 +22,7 @@ public class RankFrame extends JFrame {
 	// 下面这里需要一个ArrayList<Info>
 
 	public RankFrame() {
-		setLayout(new BorderLayout());
+		setLayout(null);
 
 		title.setLayout(new GridLayout(1, 4));
 		title.add(rank);
@@ -31,15 +30,19 @@ public class RankFrame extends JFrame {
 		title.add(round);
 		title.add(score);
 
-		add(title, BorderLayout.NORTH);
-		add(content, BorderLayout.CENTER);
-		add(ret, BorderLayout.SOUTH);
+		title.setBounds(10, 0, 250, 30);
+		add(title);
+		content.setBounds(10, 50, 250, 100);
+		add(content);
+		ret.setBounds(76, 130, 100, 30);
+		add(ret);
 
-		setSize(250, 300);
+		setSize(250, 200);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setAlwaysOnTop(true);
 		setVisible(true);
+		setTitle("游戏排行");
 
 		ret.addActionListener(new ActionListener() {
 			@Override
@@ -49,5 +52,4 @@ public class RankFrame extends JFrame {
 		});
 
 	}
-
 }
