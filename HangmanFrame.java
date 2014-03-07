@@ -14,9 +14,11 @@ import javax.swing.JPanel;
 
 import panel.InceptionPanel;
 import panel.PlayPanel;
+import core.Game;
 
 @SuppressWarnings("serial")
 public class HangmanFrame extends JFrame {
+	public Game game = new Game("file/rank.txt", "file/save.txt");
 	private InceptionPanel inceptionPanel = new InceptionPanel();
 	private PlayPanel playPanel = new PlayPanel(6, 1, 1, 1);
 
@@ -59,11 +61,7 @@ public class HangmanFrame extends JFrame {
 				ok.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// if (inceptionPanel != null) {
-						// inceptionPanel.setVisible(false);
-						// remove(inceptionPanel);
-						// }
-						// playPanel.setVisible(true);
+						// tyfyt
 					}
 				});
 				JButton cancel = new JButton("È¡Ïû");
